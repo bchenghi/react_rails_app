@@ -27,7 +27,12 @@ function AddCategory() {
     };
     requestCategories();
   };
-  
+
+  const special_button_style = {
+    padding: '2px',
+    margin: '4px'
+  };
+
 // Validation for the category have been declared in the category model
   return (
     <div>
@@ -45,8 +50,7 @@ function AddCategory() {
         {() => (
           <Form>
             <Field type="text" name="attributes.category" />
-
-            <button type="submit">Create</button>
+            <button type="submit" style={special_button_style}>Create</button>
           </Form>
         )}
       </Formik>

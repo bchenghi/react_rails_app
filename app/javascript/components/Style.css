@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,300,400italic");
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700");
+
+.title{
+  background: #f57011;
+  height: 60px;
+font-family: "Maven Pro";
+font-size: 28px;
+font-weight: 500;
+color: white;
+padding: 14px 5%;
+text-decoration: none;
+margin: 0px;
+}
+
+/* in ./ShowCategory file, for changing expired tag red */
+.expired{
+  color:red;
+}
+h1 {
+  margin:10px;
+}
+body{
+  margin:0px;
+}
+
+button{
+  background-color: orange;
+ border: none;
+ color: white;
+ padding: 9px 19px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ -webkit-transition-duration: 0.4s;
+ transition-duration: 0.4s;
+ cursor: pointer;
+}
+
+button:hover {
+  background-color: #FF8C00;
+  color: white;
+}
+
+div {
+  font-family: "Roboto";
+  font-size: 16px;
+  line-height: 28px;
+}
+
+a:link, a:visited {
+  background-color: orange;
+  color: white;
+  padding: 5px 9px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+a:hover, a:active {
+  background-color: #FF8C00;
+}
+
+table {
+  background: #f6f6f6;
+  padding: 16px;
+}

@@ -49,7 +49,7 @@ function AddTask(props) {
   return (
     <div>
       <h2>Add a task to {category}</h2>
-      <li>Task cannot be empty</li>
+      <li>Task and due date cannot be empty</li>
       <Formik
         initialValues={{
             task: "",

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from '@reach/router';
+import './Style.css';
 
 function CategoryList() {
   // categories's state is declared as an array of data objects.
@@ -15,10 +16,17 @@ function CategoryList() {
     requestCategories();
   }, []);
 
+  // below is add space between the add category link and category list
+  const add_link_style = {
+    margin: '5px 0px'
+  }
+
   // By using the map function, each category name can be obtained from the array,
   // and displayed using jsx tags. In each row, links to read, update,
   // and delete is created. At the top of the table of categories,
   // a link to the AddCategory component is added
+
+if (categories!==undefined){
   const category_list = categories.map(category =>
     <tr>
     <td key={category.id}>{category.attributes.category}</td>
@@ -27,11 +35,11 @@ function CategoryList() {
     <td><Link to={category.id+'/delete'}>Delete</Link></td>
     </tr>
   );
-
-  return (<div>
-    <h2>Welcome to my Task Manager</h2>
+  return (
+    <div>
+    <h2 className='title' >Welcome to your Task Manager</h2>
     <h1>Listing Categories</h1>
-    <Link to="/add">Add Category</Link>
+    <Link to="/add" style={add_link_style}>Add Category</Link>
     <table>
     <tbody>
     <tr>
@@ -41,7 +49,27 @@ function CategoryList() {
   {category_list}
   </tbody>
 </table>
+</div>
+);
+} else {
+  return (
+    <div>
+    <h2 className='title' >Welcome to my Task Manager</h2>
+    <h1>Listing Categories</h1>
+    <Link to="/add" style={add_link_style}>Add Category</Link>
+    <table>
+    <tbody>
+    <tr>
+    <th>Category</th>
+    <th></th>
+    </tr>
+    <tr>
+  <td>No categories yet</td>
+  </tr>
+  </tbody>
+</table>
 </div>);
 }
+};
 
 export default CategoryList;
