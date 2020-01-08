@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from '@reach/router';
-import './Style.css';
+
 
 function CategoryList() {
   // categories's state is declared as an array of data objects.
