@@ -7,7 +7,7 @@ import DeleteCategory from "./DeleteCategory";
 import EditCategory from "./EditCategory";
 import AddTask from "./AddTask";
 import DeleteTask from "./DeleteTask";
-import Style from'./Style.css';
+import Style from '../../assets/stylesheets/Style.css';
 
 // :categoriesId is the id of a category, while :taskId is the id
 // of a task, passed through the functions
