@@ -6,6 +6,7 @@ function DeleteTask(props) {
   // The state of 'task' is declared as the category that is passed
   // through the function as a prop.
   let task = GetTask(props.taskId);
+  let url = "/api/tasks/"+props.taskId;
   // handleDelete function will delete the given task. If
   // successful, will be redirected to the the ShowCategory page
   const handleDelete = values => {
@@ -39,7 +40,7 @@ function DeleteTask(props) {
     <div>
       <h2>Delete task: {task}?</h2>
       <button onClick={handleDelete}>Confirm</button><br/><br/>
-      <Link to={'/'+props.categoriesId} style={add_link_style}>Category</Link>
+      <Link to={'/'+props.categoriesId} >Category</Link>
       <Link to='/alltasks' style={add_link_style}>All Tasks</Link>
     </div>
   );

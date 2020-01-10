@@ -3,10 +3,9 @@ import { Link } from '@reach/router';
 
 
 function CategoryList() {
+
   // categories's state is declared as an array of data objects.
-
   const [categories, setCategories] = useState([]);
-
   useEffect(() => {
     const requestCategories = async () => {
       const response = await fetch("/api/categories");
@@ -18,7 +17,7 @@ function CategoryList() {
 
   // below is add space between the add category link and category list
   const add_link_style = {
-    margin: '5px 0px'
+    margin: '5px 5px'
   }
 
   // By using the map function, each category name can be obtained from the array,
@@ -39,7 +38,8 @@ if (categories!==undefined){
     <div>
     <h2 className='title' >Welcome to your Task Manager</h2>
     <h1>Listing Categories</h1>
-    <Link to="/add" style={add_link_style}>Add Category</Link>
+    <Link to="/add" >Add Category</Link>
+    <Link to='/alltasks' style={add_link_style}>All tasks</Link>
     <table>
     <tbody>
     <tr>

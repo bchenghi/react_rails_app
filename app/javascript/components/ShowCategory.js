@@ -5,6 +5,9 @@ import GetTasks from './GetTasks';
 
 function ShowCategory(props) {
 
+  const add_link_style = {
+    margin: '5px 5px'
+  }
 
   let category = GetCategory(props.categoriesId);
   let tasks = GetTasks(props.categoriesId);
@@ -45,6 +48,7 @@ function ShowCategory(props) {
       </tbody>
       </table>
       <br/><Link to='/'>Categories</Link>
+      <Link to='/alltasks' style={add_link_style}>All Tasks</Link>
       </div>
 
     );
@@ -55,6 +59,7 @@ function ShowCategory(props) {
       <Link to={'/'+props.categoriesId+'/addtask'}>Add Task</Link><br/>
       <h2>No tasks yet</h2>
       <Link to='/'>Categories</Link>
+      <Link to='/alltasks' style={add_link_style}>All Tasks</Link>
       </div>
 
     );
