@@ -1,38 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from '@reach/router';
-
+import GetCategory from './GetCategory';
+import GetTasks from './GetTasks';
 
 function ShowCategory(props) {
 
-  // declare category's state as the category of prop passed into the
-  // ShowCategory function.
-  const [category, setCategory] = useState('');
-  const url = "/api/categories/"+props.categoriesId;
-  useEffect(() => {
-    const requestCategory = async () => {
-      const response = await fetch(url);
-      const { data } = await response.json();
-      const att = await data.attributes;
-      const cat = await att.category;
-      setCategory(cat);
-    };
-    requestCategory();
-  }, []);
 
-  // declare tasks' state as array of tasks.
-  const [tasks, setTasks] = useState([]);
-  useEffect(() => {
-    const requestTask = async () => {
-      const response = await fetch(url+'?include=tasks');
-      const obj = await response.json();
-      const inc = await obj.included;
-      setTasks(inc);
-    };
-    requestTask();
-  }, []);
+  let category = GetCategory(props.categoriesId);
+  let tasks = GetTasks(props.categoriesId);
 
   // if tasks array is undefined(it is empty), will show the user 'No tasks yet',
-  // otherwise, will list the tasks and respective due dates.
+  // otherwise, will list the tasks and respective due dates, sorted with
+  // earliest date at the top. If the due date of the task is over the current
+  // date, it will display 'expired' for the task
   if (tasks!==undefined) {
     var task_list = [].concat(tasks).sort((a,b) =>
     new Date(a.attributes.due).getTime()-new Date(b.attributes.due).getTime()).
@@ -64,7 +44,7 @@ function ShowCategory(props) {
       {task_list}
       </tbody>
       </table>
-      <br/><Link to='/'>Back</Link>
+      <br/><Link to='/'>Categories</Link>
       </div>
 
     );
@@ -74,7 +54,7 @@ function ShowCategory(props) {
       <h1>{category}</h1>
       <Link to={'/'+props.categoriesId+'/addtask'}>Add Task</Link><br/>
       <h2>No tasks yet</h2>
-      <Link to='/'>Back</Link>
+      <Link to='/'>Categories</Link>
       </div>
 
     );

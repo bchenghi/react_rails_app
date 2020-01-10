@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { navigate, Link } from "@reach/router";
+import GetCategory from './GetCategory';
 
 function DeleteCategory(props) {
-  // The state of 'category' is declared as the category that is passed
-  // through the function as a prop.
-  const [category, setCategory] = useState('');
-  const url = "/api/categories/"+props.categoriesId;
-  useEffect(() => {
-    const requestCategory = async () => {
-      const response = await fetch(url);
-      const { data } = await response.json();
-      const att = await data.attributes;
-      const cat = await att.category;
-      setCategory(cat);
-    };
-    requestCategory();
-  }, []);
+
+  let category = GetCategory(props.categoriesId);
+  let url = "/api/categories/"+props.categoriesId;
   // handleDelete function will delete the given category. If
   // successful, will be redirected to the index page
   const handleDelete = values => {

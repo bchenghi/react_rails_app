@@ -3,21 +3,9 @@ import { navigate, Link } from "@reach/router";
 import { Formik, Field, Form } from "formik";
 
 function AddTask(props) {
-// state of category is declared as the category of the prop passed into the
-// AddTask function
-  const [category, setCategory] = useState('');
-  const url = "/api/categories/"+props.categoriesId;
-  useEffect(() => {
-    const requestCategory = async () => {
-      const response = await fetch(url);
-      const { data } = await response.json();
-      const att = await data.attributes;
-      const cat = await att.category;
-      setCategory(cat);
-    };
-    requestCategory();
-  }, []);
 
+  let category = GetCategory(props.categoriesId);
+  
 // handleSubmit function will post a new task to the category
   const handleSubmit = values => {
     const requestTasks = async () => {
