@@ -4,7 +4,7 @@ import { Link } from '@reach/router';
 
 function CategoryList() {
 
-  // categories's state is declared as an array of data objects.
+  // The state variable categories is declared as an array of data objects.
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     const requestCategories = async () => {

@@ -4,7 +4,8 @@ import GetCategory from './GetCategory';
 
 function TaskList() {
 
-
+// the state variable task will be declared as an array of tasks,
+// each containing the task name, due date, and the category id
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
     const requestTasks = async () => {
@@ -16,10 +17,10 @@ function TaskList() {
   }, []);
 
 
-  // By using the map function, each task name can be obtained from the array,
-  // and displayed using jsx tags. In each row, links to the task's category,
-  // and delete is created. At the top of the table of categories,
-  // a link to the AddCategory component is added
+  // By using the map function, each task name and due date can be obtained from
+  // the array, and displayed using jsx tags. In each row, links to the task's
+  // category, and delete is created. If task is expired, expired will
+  // be displayed for the task
 
 
   var task_list = [].concat(tasks).sort((a,b) =>
