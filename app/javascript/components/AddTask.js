@@ -1,11 +1,12 @@
 import React,{ useEffect, useState } from "react";
 import { navigate, Link } from "@reach/router";
 import { Formik, Field, Form } from "formik";
+import GetCategory from './GetCategory';
 
 function AddTask(props) {
 
   let category = GetCategory(props.categoriesId);
-  
+
 // handleSubmit function will post a new task to the category
   const handleSubmit = values => {
     const requestTasks = async () => {
