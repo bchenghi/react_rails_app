@@ -48,6 +48,10 @@ function EditCategory(props) {
     editCategory();
   };
 
+  const special_button_style = {
+    padding: '2px',
+    margin: '4px'
+  };
 
   return (
     <div>
@@ -60,7 +64,7 @@ function EditCategory(props) {
         {() => (
           <Form>
             <Field type="text" name="category" />
-            <button type="submit">Update</button>
+            <button type="submit" style={special_button_style}>Update</button>
           </Form>
         )}
       </Formik>
