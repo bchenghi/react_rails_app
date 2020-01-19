@@ -2,6 +2,12 @@ import React from "react";
 import { navigate, Link } from "@reach/router";
 import { Formik, Field, Form } from "formik";
 
+
+// The AddCategory component has a form for typing a new category name.
+// After submitting, the application will redirect to the CategoryList
+// component. New categories must have at least 3 characters and the validation
+// is added in the category model.
+
 function AddCategory() {
   // handleSubmit function is to add a new category to the already existing
   // categories. If successful, it will redirect to index page.
@@ -38,7 +44,6 @@ function AddCategory() {
     <div>
       <h2>Add your category</h2>
       <li>Must be at least 3 characters</li>
-      <li>Cannot be empty</li>
       <Formik
         initialValues={{
           type: "categories",
