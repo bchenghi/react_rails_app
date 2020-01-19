@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from '@reach/router';
 import GetCategory from './GetCategory';
 
+// The TaskList component displays all current tasks in the database. They are
+// sorted according to their due dates, with the earliest at the top to
+// the latest at the bottom. 'Expired' is displayed if the task is expired.
+// Buttons to ShowCategory and DeleteTask for each task is added. Below the
+// list, a button to CategoryList component is added.
+
 function TaskList() {
 
 // the state variable task will be declared as an array of tasks,

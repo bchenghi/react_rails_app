@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { navigate, Link } from "@reach/router";
 import GetCategory from './GetCategory';
 
+// After pressing the confirm button, the given category will be deleted,
+// and the application will be redirected to the CategoryList component.
+
 function DeleteCategory(props) {
 
   let category = GetCategory(props.categoriesId);

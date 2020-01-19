@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { navigate, Link } from "@reach/router";
 import { Formik, Field, Form } from "formik";
 
+// The EditCategory component has a form to type a new name for a category.
+// After submitting, the application will redirect to CategoryList component.
 
 function EditCategory(props) {
   // Line 8 to 19 is to declare the state of 'category' as the name of
@@ -56,6 +58,7 @@ function EditCategory(props) {
   return (
     <div>
       <h2>Edit category: {category}</h2>
+      <li>Must be at least 3 characters</li>
       <Formik
       initialValues={{
           category: ""

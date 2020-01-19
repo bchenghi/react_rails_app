@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { navigate, Link } from "@reach/router";
 import GetTask from './GetTask';
 
+// After pressing the confirm button, the task will be deleted, and the
+// application will be redirected to ShowCategory component
+
 function DeleteTask(props) {
   // The state of 'task' is declared as the category that is passed
   // through the function as a prop.

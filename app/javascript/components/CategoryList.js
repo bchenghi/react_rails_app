@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from '@reach/router';
 
+// The CategoryList component displays the categories. Buttons to ShowCategory,
+// EditCategory and DeleteCategory is added to each category. At the top of
+// the list, buttons to AddCategory and TaskList components is added.
 
 function CategoryList() {
 

@@ -3,6 +3,10 @@ import { Link } from '@reach/router';
 import GetCategory from './GetCategory';
 import GetTasks from './GetTasks';
 
+// The ShowCategory component displays the tasks associated to the category
+// which will sorted according to their due dates. The earliest due date
+// at the top to the latest at the bottom. If the task is expired, 'expired'
+// will be displayed. Links to delete the tasks are also added.
 function ShowCategory(props) {
 
   const add_link_style = {

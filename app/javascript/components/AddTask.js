@@ -3,6 +3,10 @@ import { navigate, Link } from "@reach/router";
 import { Formik, Field, Form } from "formik";
 import GetCategory from './GetCategory';
 
+// The AddTask component has a form for adding a task name and it due date.
+// The data can be submitted to the existing task list. After adding the task,
+// the application will redirect to the ShowCategory component.
+
 function AddTask(props) {
 
   let category = GetCategory(props.categoriesId);
