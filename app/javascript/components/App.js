@@ -8,6 +8,7 @@ import EditCategory from "./EditCategory";
 import AddTask from "./AddTask";
 import DeleteTask from "./DeleteTask";
 import TaskList from "./TaskList";
+import DeleteTaskList from "./DeleteTaskList";
 import Style from '../../assets/stylesheets/Style.css';
 
 // :categoriesId is the id of a category, while :taskId is the id
@@ -24,6 +25,7 @@ function App() {
       <EditCategory path="/:categoriesId/edit"/>
       <AddTask path="/:categoriesId/addtask"/>
       <DeleteTask path="/:categoriesId/:taskId/delete"/>
+      <DeleteTaskList path="/all/:categoriesId/:taskId/delete"/>
       <TaskList path="/alltasks"/>
     </Router>
   );
