@@ -35,16 +35,12 @@ function DeleteTask(props) {
     deleteTask();
   };
 
-  const add_link_style = {
-    margin: '5px 5px'
-  }
 
   return (
     <div>
       <h2>Delete task: {task}?</h2>
       <button onClick={handleDelete}>Confirm</button><br/><br/>
-      <Link to={'/'+props.categoriesId} >Category</Link>
-      <Link to='/alltasks' style={add_link_style}>All Tasks</Link>
+      <Link to={'/'+props.categoriesId} >Back</Link>
     </div>
   );
 }
