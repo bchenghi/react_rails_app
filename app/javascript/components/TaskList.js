@@ -5,7 +5,7 @@ import GetCategory from './GetCategory';
 // The TaskList component displays all current tasks in the database. They are
 // sorted according to their due dates, with the earliest at the top to
 // the latest at the bottom. 'Expired' is displayed if the task is expired.
-// Buttons to ShowCategory and DeleteTask for each task is added. Below the
+// Buttons to ShowCategory and DeleteTaskList for each task is added. Below the
 // list, a button to CategoryList component is added.
 
 function TaskList() {
@@ -37,7 +37,7 @@ function TaskList() {
     <td>{task.attributes.task}</td>
     <td>{task.attributes.due}</td>
     <td><Link to={'/'+task.relationships.category.data.id}>Category</Link></td>
-    <td><Link to={'/'+task.relationships.category.data.id+'/'+task.id+'/delete'}>Delete</Link></td>
+    <td><Link to={'/all/'+task.relationships.category.data.id+'/'+task.id+'/delete'}>Delete</Link></td>
     <td className="expired">Expired</td>
     </tr>
     :
@@ -45,7 +45,7 @@ function TaskList() {
     <td>{task.attributes.task}</td>
     <td>{task.attributes.due}</td>
     <td><Link to={'/'+task.relationships.category.data.id}>Category</Link></td>
-    <td><Link to={'/'+task.relationships.category.data.id+'/'+task.id+'/delete'}>Delete</Link></td>
+    <td><Link to={'/all/'+task.relationships.category.data.id+'/'+task.id+'/delete'}>Delete</Link></td>
     </tr>
   );
   return (
